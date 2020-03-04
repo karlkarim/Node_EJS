@@ -12,7 +12,7 @@ app.set('views', 'views');
 
 
 app.use(userRoute);
-app.use('/admin', adminRoute);
+app.use('/admin', adminRoute.router);
 
 
 
@@ -21,7 +21,8 @@ app.use(function(req,res,next){
     res.status(404).render('404', {
         pageTitle: "Oops. Page Not Found",
         pageNotFound: "Oops. Page Not Found. Try something else",
-        pageTest: "Page Test"
+        pageTest: "Page Test",
+        path: ""
     });
     //res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
     //console.log(path.join(__dirname, 'views', '404.html'))
